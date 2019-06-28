@@ -4,6 +4,7 @@ export default class Controller {
     constructor() { }
 
     async test(ctx) {
+        console.log(ctx.request);
         let json_data = ctx.request.body;
         console.log(json_data);
 
