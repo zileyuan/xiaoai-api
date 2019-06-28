@@ -27,8 +27,8 @@ export default class Controller {
                 } else {
                     message=util.buildResponseSimple("客官，没有查询到游戏人数哦",false);
                 }
-            } else {
-                message = util.buildResponse(["这是一个例子", "播放完成后退出"], false);
+            } else if (query.indexOf('退出') > -1) {
+                message=util.buildResponseSimple("客官，拜拜啦",true);
             }
         }
         console.log(message);
