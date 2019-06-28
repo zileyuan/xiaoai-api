@@ -1,0 +1,30 @@
+{
+  "name": "xiaoai-api",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "tsc && cp -r ./src/config ./build/",
+    "start": "tsc && cp -r ./src/config ./build/ && node build/server.js test.json",
+    "watch-server": "nodemon --inspect --watch 'src/**/*' -e ts,tsx --exec 'node -r ts-node/register' ./src/server.ts test.json"
+  },
+  "author": "zileyuan@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "@koa/cors": "^2.2.3",
+    "axios": "^0.18.0",
+    "koa": "^2.6.2",
+    "koa-body": "^4.0.6",
+    "koa-logger": "^3.2.0",
+    "koa-router": "^7.4.0"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/koa": "^2.0.48",
+    "@types/koa-logger": "^3.1.1",
+    "@types/koa-router": "^7.0.38",
+    "@types/mongoose": "^5.3.9",
+    "nodemon": "^1.18.9",
+    "ts-node": "^8.0.1",
+    "typescript": "^3.2.4"
+  }
+}
