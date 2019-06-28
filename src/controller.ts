@@ -19,10 +19,10 @@ export default class Controller {
                 let res = await axios.get('https://api.jinzhanwangluo.cn/game-egg/egg/state');
                 if (res.status === 200) {
                     let amount = res.data.data.roomAmount;
-                    if (amount) {
-                        message=util.buildResponseSimple("客官，目前没人玩游戏哦",false);
-                    } else {
+                    if (amount > 0) {
                         message=util.buildResponseSimple(`客官，只有${amount}个人玩游戏哦`,false);
+                    } else {
+                        message=util.buildResponseSimple("客官，目前没人玩游戏哦",false);
                     }
                 } else {
                     message=util.buildResponseSimple("客官，没有查询到游戏人数哦",false);
